@@ -1,0 +1,1300 @@
+
+.w {
+    margin: 0 auto;
+    width: 1190px;
+    
+}
+
+dt {
+    margin: 0;
+
+}
+
+
+/* 字体加粗 */
+.strong {
+    font-weight: 700;
+    font-size: 14px;
+    color: #000;
+}
+
+
+
+
+
+
+/* 头部上面的广告 */
+.top_news {
+    position: relative;
+    z-index: 2;
+    display: block;
+    /* background-color: rgb(255, 115, 114); */
+    background-color: rgb(26, 106, 249);
+
+    /* height: 83px; */
+    }
+.top_news  img {
+    display: block;
+    height: 100px;
+    margin: 0 auto;
+  }
+
+
+/* 为了使左侧固定定位侧栏不暴露 */
+.head {
+    position: relative;
+    z-index: 5;
+}
+/* 左侧固定定位侧栏 */
+.floatbar {
+    position: fixed;
+    left: 50%;
+    margin-left: -666px;
+    top: 52.5%;
+    width: 68px;
+    padding-top: 9px;
+    border: 1px solid rgb(221, 221, 221);
+    background: rgb(248, 248, 248);
+    z-index: 1;
+}
+.floatbar ul li {
+    width: 68px;
+    height: 28px;
+    border-bottom: 1px solid #e8e8e8;
+    text-align: center;
+    line-height: 28px;
+}
+.floatbar .float-bg {
+    position: absolute;
+    width: 42px;
+    height: 41px;
+    left: 13px;
+    top: -35px;
+    /* 误打误撞,歪打正着 */
+    z-index: 1;
+    background: url(../images/float-bg.png);
+    background-size: 100% 100%;
+}
+
+
+/* 设置一个三角,方便时添加即可 */
+.sanjiao::after {
+    content: "";
+    position: absolute;
+    top: 11px;
+    right: 10px;
+    width: 6px;
+    height: 6px;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    transform: rotate(45deg);
+    transition: all 0.6s;
+}
+/* 对头部进行设置 */
+.head {
+    height: 34px;
+    background-color: rgb(245, 245, 245);
+}
+
+/* 加精灵图 */
+.font_1 a::before {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: middle;
+    background: url(../images/精灵图_2.png) -387px -183px;
+}
+.font_1 a::after {
+    /* 这张图片只取了下面一点,微调了一下 */
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 8px;
+    margin-left: 5px;
+    vertical-align: middle;
+    background: url(../images/精灵图_2.png) -895px -230px;
+
+}
+.font_3::before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    background: url(../images/精灵图.png) -7px -217px;
+
+
+}
+.font_4::before {
+    content: "";
+    display: inline-block;
+    width: 11px;
+    height: 13px;
+    margin-right: 5px;
+    vertical-align: middle;
+    background: url(../images/精灵图_2.png) -769px -90px;
+
+}
+
+
+
+/* 用一下结构伪类选择器 */
+.main_middle ul li:nth-child(1)::before {
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: -11px;
+    left: 75px;
+    width: 14px;
+    height: 17px;
+    vertical-align: middle;
+    background: url(../images/精灵图_2.png) -345px -213px;
+}
+.main_middle ul li:nth-child(4)::before {
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: -11px;
+    left: 75px;
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+    background: url(../images/精灵图_2.png) -19px 0;
+}
+/*加图片 给轮播图左侧前面 */
+.sum li {
+    position: relative;
+}
+.icon {
+    position: absolute;
+    /* 这里宽高只用设一个也行,但是不想改了 */
+    width: 16px;
+    height: 16px;
+    left: 6px;
+    top: 7px;
+}
+
+
+
+
+/* 头部有隐藏的盒子进行设置 */
+/* 我发现父类添加了position,子类可以继承,但是这里还是要加position为了让三角形能在每个盒子后面显示 */
+.header_hidden {
+    position: relative;
+    content: "";
+}
+.header_hidden a {
+    display: block;
+}
+.header_hidden .div_hidden {
+    background-color: rgb(255, 255, 255);
+    height: 0;
+    overflow: hidden;
+    /* margin-left: -10px; */
+    /* background-color: pink; */
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    transition: all .2s ease-in;
+    
+}
+/* 对隐藏盒子内部进行设置 */
+.div_hidden dl{
+    float: left;
+    width: 200px;
+    text-align: left;
+    padding-left: 8px;
+    /* background-color: pink; */
+    margin-top: 12px;
+    margin-bottom: 10px;
+
+}
+.div_hidden dl dt {
+    font-size: 14px;
+}
+.div_hidden dl dd{
+    float: left;
+    width: 75px;
+    /* 高度会继承,但是不合适 */
+    height: 22px;
+}
+/* 偶数选择器 */
+.div_hidden dl:nth-child(even) {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+.header_hidden:hover {
+    background-color: white;
+}
+.header_hidden:hover .div_hidden {
+    display: block;
+    /* height: auto; */
+    height: 160px;
+}
+.header_hidden:hover .sanjiao::after{
+    transform: rotate(-135deg);
+}
+.header_left>div {
+    width: 80px;
+    float: left;
+    padding: 0 0 0 10px;    
+    height: 34px;
+    line-height: 34px;
+}
+.header_right {
+    float: right;
+}
+.header_right>div {
+    width: 80px;
+    float: left;
+    padding: 0 0 0 10px;    
+    height: 34px;
+    line-height: 34px;
+}
+/* 右侧有隐藏盒子里的log单独设置 */
+#img_1 {
+    display: block;
+    width: 54px;
+}
+/* 对右侧最后一个进行设置,因为有二维码,比较特殊 */
+.top_right_last .div_hidden{
+    float: right;
+}
+.top_right_last dl {
+    float: left;
+    width: 100%;
+    text-align: left;
+    padding-left: 8px;
+    /* background-color: pink; */
+    margin-top: 12px;
+    margin-bottom: 10px;
+}
+.top_right_last .div_hidden dl dd{
+    float: left;
+    width: 120px;
+    height: 120px;
+    margin: 0 5px;
+}
+.top_right_last .div_hidden dl dd p {
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+}
+.top_right_last:hover .div_hidden {
+    height: 180px;
+}
+/* 搜索框 */
+.search {
+    position: relative;
+    width: 1190px;
+    height: 100px;
+}
+.search>img {
+    position: absolute;
+    top: 10px;
+    width: 190px;
+    height: 90px;
+}
+.search_box {
+    position: absolute;
+    width: 600px;
+    height: 100px;
+    top: 2px;
+    left: 300px;
+    text-align: center;
+    /* line-height: 100px; */
+
+}
+.search_box .input_s {
+    display: flex;
+    position: absolute;
+    height: 40px;
+    top: 29px;
+    left: 55px;
+    border: 2px solid rgb(255, 128, 0);
+    border-radius: 12px;
+    justify-content: center;
+}
+.input_s .input_1 {
+    width: 390px;
+    padding: 9px 10px 9px 0px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    color: #ccc;
+}
+.input_s .input_2 {
+    /* 鼠标经过变成小手 */
+    cursor: pointer;
+    width: 120px;
+    background-color:rgb(255, 128, 0);
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    color: aliceblue;
+    font-size: 18px;
+    font-weight: 700;
+}
+.input_s::before {
+    font-family: 'icomoon';
+    /* content: '\25BC'; */
+    content: '\e986';
+    line-height: 36px;
+    margin:0 7px;
+    font-size: 14px;
+    color: #ccc;
+}
+/* 搜索框下的关键字 */
+.keywords {
+    position: absolute;
+    top: 75px;
+    left: 45px;
+
+}
+.keywords ul li {
+    padding: 0 10px;
+    float: left; 
+}
+.keywords ul li:nth-child(even) {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+
+/* 
+给ground加top值,原来所占位置不变,这个ground是背景,但是背景下移了,只要层级性低于下面盒子
+下面多出来部分就会被下面盒子盖住,上面就会少一部分,就可以实现我们需要的里面内容的头部导航可以不被包括在背景中,更好看
+而至于因为有个固定定位盒子,经过此盒子时需要被隐藏,但是经过下面盒子要漏出来,层级性有漏洞
+所以这里层级性高于下面的,而下面多出来的部分不能被盖住应该如何解决-----添加应该绝对定位的盒子,层级性很高,放到底下挡住下面多出来部分,很完美! */
+.ground {
+    position: relative;
+    top: 48px;
+    animation: colorChange 32s infinite;
+    background-color: rgb(219, 20, 15);
+    animation-delay: 5s;
+    z-index: 2;
+
+}
+/* 背景切换 */
+  @keyframes colorChange {
+            0% {
+                background-color: rgb(219, 20, 15);
+            }
+            18.28% {
+                background-color: rgb(52, 64, 224);
+            }
+            28.57% {
+                background-color: rgb(179, 35, 35);
+            }
+            42.85% {
+                background-color: rgb(168, 142, 213);
+            }
+            57.14% {
+                background-color: rgb(56, 113, 185);
+            }
+            71.42% {
+                background-color: rgb(152, 185, 248);
+            }
+            85.71% {
+                background-color: rgb(255, 56, 77);
+            }
+            100% {
+                background-color: rgb(219, 20, 15);
+            }
+        }
+
+/* 拿这个盒子来挡住下面多出来部分,好看一些 */
+.dang {
+    position: absolute;
+    bottom: 0px;
+    background-color: rgb(242, 242, 242);
+    width: 100%;
+    height: 39px;
+    z-index: 5;
+}
+
+
+
+
+.main {
+    /* 这里添加相对定位，但是自身位置不变
+    向下挪了一些，里面盒子向上挪了一些 */
+    position: relative;
+    top: -38px;
+    height: 513px; 
+    background-color: white;
+}
+/* 左侧栏 */
+.main_left {
+    float: left;
+}
+.main_left>a {
+    display: block;
+    width: 200px;
+    height: 38px;
+    line-height: 38px;
+    font-size: 13px;
+    font-weight: 700;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #ff8000;
+    padding-left: 10px;
+    color: white;
+}
+.main_left>a::before {
+    content: "";
+    display: inline-block;
+    width: 21px;
+    height: 13px;
+    background: url(../images/精灵图_2.png) -928px 0px;
+}
+.main_left ul {
+    position: relative;
+    float: left;
+}
+.main_left ul li {
+    width: 200px;
+    height: 31px;
+    padding: 0 6px 0 28px;
+    line-height: 29px;
+    text-align: left;
+    font-size: 14px;
+}
+
+/* 中间上面部分 */
+.main_middle {
+    display: flex;
+    float: left;
+}
+.main_middle>a img {
+    width: 110px;
+    height: 38px;
+}
+.main_middle ul li  {
+    float: left;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 0 12px 0 13px;
+    height: 38px;
+    line-height: 43px;
+    /* color: #333; */
+}
+/* 右侧栏 */
+.main_right {
+    float: right;
+    /* background-color: pink; */
+}
+.main_right_top img {
+    width: 196px;
+    height: 39px;
+    margin-bottom: 10px;
+}
+
+.main_right_middle_1 p{
+    margin-bottom: 5px;
+    
+}
+.main_right_middle_1 img {
+    float: left;
+    width: 50px;
+    margin-right: 10px;
+}
+.main_right_middle_1>a {
+    display: block;
+    width: 160px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    margin: 10px 0 0 20px;
+    font-size: 13px;
+    font-weight: 400;
+    color: aliceblue;
+    background-color:#ff8000;
+    border-radius: 3px;
+}
+
+.main_right_middle_2 a{
+    display: block;
+    float: left;
+    width: 65px;
+    height: 85px;
+    text-align: center;
+    margin-top: 17px;
+    
+}
+.main_right_middle_2 img {
+    width: 36px;
+    margin: 6px 14px;
+}
+
+.main_right_middle_3 ul {
+    width: 196px;
+}
+
+.main_right_middle_3 ul li {
+    /* background-color: pink; */
+    float: left;
+    width: 65px;
+    height: 85px;
+    text-align: center;
+    border: 1px solid rgb(230, 227, 227);
+    margin-left: -1px;
+    margin-top: -1px;
+}
+.main_right_middle_3 ul li img {
+    display: block;
+    width: 36px;
+    margin: 6px auto;
+}
+/* ----------------------- */
+/* 对左侧设置划入划出内容 */
+.more {
+    position: absolute;
+    top: 0px;
+    left: 200px;
+    /* width: 990px; */
+    width: 0;
+    height: 476px;
+    overflow: hidden;
+    background-color: rgb(243, 243, 243);
+    z-index: 10086;
+    transition: width .2s ease .2s;
+   
+}
+.more  dl {
+    width: 800px;
+}
+
+.more  dl dt {
+    float: left;
+    padding-left: 10px;
+    padding-top: 8px;
+}
+.more  dl dt a{
+    display: block;
+    width: 84px;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 700;
+}
+.more  dl dd {
+    float: left;
+    width: 690px;
+    line-height: 20px;
+    border-bottom: 1px solid #eee;
+    margin-top: 8px;
+    padding-bottom: 8px;
+}
+.more  dl dd a{
+    display: inline-block;
+    font: 12px/1.5 arial,tahoma,\5b8b\4f53;
+    /* color: #000; */
+    margin-right: 15px;
+}
+
+.more_left {
+    float: left;
+     padding-top: 30px;
+}
+.more_right {
+    float: right;
+    display: flex;
+    flex-wrap: wrap;
+    width: 190px;
+    margin-top: 10px;
+}
+.more_right a {
+    margin: 0 1px 1px 0;
+    padding-top: 7px;
+    background: #fff;
+}
+.more_right .small {
+    width: 80px;
+    height: 30px;
+}
+.more_right .big {
+    width: 180px;
+    height: 100px;
+}
+
+
+.sum li:hover .more{
+    width: 990px;
+}
+/* -------------------------- */
+/* 对中间下面的轮播图进行设置 */
+.slide {
+    position: relative;
+    float: left;
+}
+
+/* 两边三角出现 */
+.slide:hover .silde_middle {
+    display: block;
+}
+.slide ul>a {
+    position: absolute;
+    z-index: 2;
+}
+.slide ul {
+  display: flex;
+  position: relative;
+  list-style: none;
+  width: 794px;
+  height: 476px;
+  overflow: hidden;
+
+}
+.slide ul li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: move 32s linear infinite;
+  transition: opacity 0.5s ease;
+}
+
+.slide ul li:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.slide ul li:nth-child(2) {
+  animation-delay: 4s;
+}
+
+.slide ul li:nth-child(3) {
+  animation-delay: 8s;
+}
+
+.slide ul li:nth-child(4) {
+  animation-delay: 12s;
+}
+
+.slide ul li:nth-child(5) {
+  animation-delay: 16s;
+}
+
+.slide ul li:nth-child(6) {
+  animation-delay: 20s;
+}
+
+.slide ul li:nth-child(7) {
+  animation-delay: 24s;
+}
+
+.slide ul li:nth-child(8) {
+  animation-delay: 28s;
+}
+
+@keyframes move {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  15% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  20% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  25% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+/* 对中间中间设置 */
+.silde_middle {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height:72px ;
+    top: 40%;
+    /* background-color: pink; */
+    z-index: 5;
+}
+.silde_middle_1 {
+    float: left;
+    margin-right: 369px;
+}
+.silde_middle_1::before {
+    content: "";
+    display: inline-block;
+    width: 28px;
+    height: 72px;
+    background: url(../images/精灵图_2.png) -163px -138px;
+}
+.silde_middle_2 {
+    float: right;
+    margin-left: 369px;
+}
+.silde_middle_2::after {
+    content: "";
+    display: inline-block;
+    width: 28px;
+    height: 72px;
+    background: url(../images/精灵图_2.png) -200px -140px;
+}
+/* 对中间底部设置 */
+.silde_bottom {
+    display: grid;
+    position: absolute;
+    grid-template-columns: repeat(4, 1fr); /* 创建四列网格 */
+    grid-gap: 2px; /* 设置网格之间的间距 */
+    bottom: 10px;
+    left: 8px;
+}
+.silde_bottom div img{
+    height: 112px;
+    width: 193px;
+    border-radius: 5px;
+}
+
+
+
+.bg {
+    /* 设置了这个脱离了标准流，我不知道为什么把这个去了就会有bug*/
+    /* position: relative; */
+    background-color: rgb(242, 242, 242);
+    padding-bottom: 40px;
+    /* 不知道,但是到后面没影响又注释掉了 */
+    /* padding-top: 2px; */
+    /* z-index: 0; */
+}
+/* 后面盒子 */
+
+
+
+/* 两列两行 */
+.two_two {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 创建两列网格 */
+  grid-template-rows: repeat(2, 1fr); /* 创建两行网格 */
+  grid-gap: 5px; /* 设置网格之间的间距 */
+  grid-column-gap:15px;
+  margin-top: 32px;
+  
+  
+}
+.two_two>div {
+    background-color: white;
+    border-radius: 6px;
+    margin-top: 15px;
+    /* 这个可以不要,是自适应高度的,但是因为第四个盒子是个轮播盒子,要限制一下高度和宽度 */
+    width: 588px;
+    height: 280px;
+    overflow: hidden;
+}
+
+.tittle {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+}
+/* 第一个 */
+.tittle a {
+    display: block;
+    float: left;
+    margin-left: 10px;
+}
+.tittle a img{
+    width: 106px;
+    height: 30px;
+}
+/* 第二个 */
+.tittle span {
+    color: #ff8000;
+    font: 14px/16px 'Microsoft Yahei',tahoma,arial,'Hiragino Sans GB';
+    border: 1px solid #ff8000;
+    margin-left: 7px;
+    border-radius: 3px;
+}
+/* 第三个 */
+.tittle div {
+    float: right;
+    font-size: 14px;
+}
+.tittle div a::after {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url('../images/more.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  /* 设置基线 */
+  vertical-align:middle;
+  margin:0 10px 0 5px;
+}
+/* .tittle div a:hover  a::after{
+} */
+
+
+
+/* 一行三列 */
+.one_three {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;   
+   /* 设置网格之间的间距  这里不需要设置*/
+   /* grid-gap: 40px;  */
+   text-align: center;
+   gap: 15px;
+}
+
+.one_three>a {
+    margin-bottom: 10px;
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+/* 盒子添加透明 */
+.one_three>a:hover {
+    opacity: 0.7;
+}
+.one_three>a div img {
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+    border-radius: 6px;
+
+}
+
+
+/* 两行三列 */
+.two_three {
+    display: grid;
+    grid-template-rows: repeat(2, auto); /* 设置两行，自动调整高度 */
+    grid-template-columns: repeat(3, 1fr); /* 设置三列 */
+    height: 510px;
+}
+.all>img{
+    width: 1190px;
+    height: 80px;
+}
+.two_three>div {
+    width: 390px;
+    height: 245px;
+    border-radius: 6px;
+    background-color: white;
+}
+/* 一行两列 */
+.one_two {
+   display: grid;
+   grid-template-columns: 1fr 1fr;   
+   width: 390px;
+   height: 175px;
+   gap: 15px;
+}
+.one_two>a {
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+.one_two>a:hover{
+    opacity: 0.7;
+}
+.one_two img {
+    display: block;
+    width: 165px;
+    margin:auto;
+    border-radius: 6px;
+}
+
+.text {
+    display: block;
+    height: 60px;
+}
+/* 设置文字 */
+.text .text_1 {
+    float: left;
+    height: 37px;
+    font-size: 26px;
+    color: #333;
+    font-weight: 700;
+    margin: 11px 12px 0 16px;
+}
+.text .text_2 {
+    float: left;
+    height: 22px;
+    font-size: 16px;
+    color: #666;
+    margin-top: 20px;
+}
+
+.one_five {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 设置五列 */
+  gap: 10px; /* 设置单元格之间的间距 */
+  margin-top: 10px;
+  
+}
+.one_five>div {
+    width: 230px;
+    height: 350px;
+    background-color: white;
+}
+.one_five>div a {
+    display: block;
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* text-align: center; */
+}
+.one_five>div img {
+    width: 230px;
+    height: 230px;
+    margin: 0 0 10px;
+}
+
+
+/* 给one_three里面的p设置样式 */
+.da {
+    width: 170px;
+    height: 20px;
+    color: #333;
+    font-size: 14px;
+    line-height: 20px;
+    overflow: hidden;
+}
+
+/* 第四栏 */
+.dg {
+    color: #333;
+    height: 20px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 20px;
+    width: 170px;
+    margin: 10px 0 2px 0;
+}
+.df {
+    color: #f20;
+    font-size: 14px;height: 20px;
+    line-height: 20px;
+    text-align: center;
+    width: 170px;
+    margin-bottom: 10px;
+}
+.df em::before {
+    display: inline-block;
+    content: '';
+    width: 22px;
+    height: 15px;
+    background-image: url(../images/火苗.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 12px;
+    vertical-align:sub;
+}
+
+/* 第四栏轮播动画  切换 */
+.over {
+    overflow: hidden;
+}
+
+
+.over ul li {
+    animation: switch 10s linear infinite;
+}
+
+@keyframes switch {
+    0% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(0);
+
+    }
+    50% {
+        transform: translateY(-222px);
+    }
+    90% {
+        transform: translateY(-222px);
+    }
+    100% {
+        transform: translateY(-444px);
+    }
+}
+
+
+
+
+
+/* 给one_five里面的每一个p设置样式 */
+.d_1 {
+    width: 202px;
+    height: 40px;
+    margin: 0 0 8px 14px;
+    font: 14px/20px 'Microsoft Yahei',tahoma,arial,'Hiragino Sans GB';
+    overflow: hidden;
+}
+
+/* 黄色框,百亿补贴,包邮 */
+.d_2 {
+    width: 190px;
+    height: 18px;
+    margin-left: 14px;
+}
+.d_2>span {
+    padding: 0 2px;
+    height: 16px;
+     color: #ff8000;
+    font: 14px/16px 'Microsoft Yahei',tahoma,arial,'Hiragino Sans GB';
+    background: #fff;
+    border: 1px solid #ff8000;
+    margin-right: 7px;
+    border-radius: 3px;
+    margin-bottom: 2px;
+}
+
+/* 到手价标签 */
+.ds {
+    position: absolute;
+    left: 95px;
+    width: 41px;
+    height: 16px;
+    margin: 7px 0 0 0;
+    background: url(../images/到手价.png);
+    background-size: 100% 100%;
+}
+
+/* 价格标签 */
+.d_3 {
+    position: relative;
+    float: left;
+    line-height: 28px;
+    color: #f30;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 14px;
+}
+.d_3 i {
+    font-size: 14px;
+}
+
+
+
+
+/* 页尾 */
+.last {
+    position: relative;
+    z-index: 2;
+    height: 279px;
+    background-color: rgb(245, 245, 245);
+    border-top: 1px solid #e7e7e7;
+}
+.last .last_up {
+    display: flex;
+    width: 100%;
+    padding: 12px 0;
+    border-bottom: 1px solid #eaeaea;
+    justify-content: space-around;
+}
+.last_up dl div {
+    height: 48px;
+}
+.last_up dl dt {
+    float: left;
+    display: block;
+    
+}
+.last_up dl dt img {
+    width: 48px;
+}
+.last_up dl dd {
+    float: left;
+    line-height: 24px;
+}
+.last_down {
+    width: 100%;
+}
+.last_down dt {
+    font-size: 14px;
+    font-weight: 700;
+    color: #000;
+    height: 35px;
+    line-height: 35px;
+}
+.last_down .last_down_left {
+    float: left;
+}
+.last_down .last_down_left dl {
+    float: left;
+    width: 210px;
+}
+.last_down .last_down_left dl dd {
+    height: 22px;
+    line-height: 22px;
+}
+
+.last_down .last_down_right {
+    float: left;
+    width: 90px;
+}
+
+
+.end {
+    margin-top: 15px;
+}
+.end p {
+    text-align: center;
+}
+.end p a {
+    color: #666;
+}
+/* 加权重,让a不使用hover,碰到不变色,我也不知道为啥 */
+.end .p_12 a{
+    color: #000;
+}
+
+.p_0  a img{
+    height: 24px;
+    margin-right: 8px;
+}
+
+
+
+
+/* 最右侧广告 */
+.v_right {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 35px;
+    height: 100%;
+    background-color: rgb(56, 56, 56);
+    z-index: 3;
+}
+.v_right ._818 {
+    position: relative;
+    top: 0;
+    right: 18px;
+    width: 55px;
+    height: 150px;
+}
+
+/* 这个是购物车地方 */
+.v_1 {
+    width: 20px;
+    height: 147px;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 14px;
+}
+.v_2 {
+    margin-top: 100px;
+    height: 280px;
+}
+
+.v_right .ling {
+    position: relative;
+    float: right;
+    width: 35px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    font-size: 13px;
+    background-color: rgb(56, 56, 56);
+    overflow: visible;
+    transition: width .5s ease;    
+
+}
+.ling_1{
+    float: right;
+    display: block;
+    width: 35px;
+    height: 30px;
+}
+.ling_2 {
+    display: block;
+    float: right;
+    /* width: 35px; */
+    height: 30px;
+    line-height: 30px;
+}
+.ling_3 {
+    position: absolute;
+    display: none;
+    top: -216px;
+    right: 36px;
+}
+.ling_3 img{
+    display: block;
+    width: 158px;
+    height: 249px;
+}
+.ling_4 {
+    position: absolute;
+    display: none;
+    top: -198px;
+    right: 25px;
+    width: 169px;
+    height: 236px;
+    z-index: 10086;
+    background: url(../images/new-code-bg.png) no-repeat;
+    line-height: 236px;
+}
+.ling_4 img {
+    text-align: center;
+    width: 134px;
+    height: 134px;
+}
+.ling:hover {
+    width: 90px;
+    background-color: #ffaa01;
+}
+.ling:hover .ling_2 {
+    color: #000;
+}
+.ling:hover .ling_3 {
+   display: block;
+}
+.ling:hover .ling_4 {
+    display: block;
+}
+.ph_1 {
+    background: url(../images/精灵图.png) 0 0;
+}
+.ph_2 {
+    background: url(../images/精灵图.png) 0 -24px;
+}
+.ling:hover .ph_2 {
+    background: url(../images/精灵图.png) 25px -24px;
+}
+.ph_3 {
+    background: url(../images/精灵图.png) 0 -47px;
+}
+.ph_4 {
+    background: url(../images/精灵图.png) 0 -71px;
+}
+.ph_5 {
+    background: url(../images/精灵图.png) 0 -94px;
+}
+.ph_6 {
+    background: url(../images/精灵图.png) 0 -288px;
+}
+.ph_7 {
+    background:url(../images/精灵图.png) 0 -117px;
+}
+.ph_8 {
+    background:url(../images/精灵图.png) 0 -139px;
+}
+.ph_9 {
+    background:url(../images/精灵图.png) 0 -163px;
+}
+.ph_10 {
+    background:url(../images/精灵图.png) 0 -187px;
+}
+
+
+/* 盒子阴影 */
+/* .yingzi:hover {
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+} */
+.one_five div:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
